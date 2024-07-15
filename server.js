@@ -9,7 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 2000;
 const API_TOKEN = process.env.API_TOKEN || 'bORYDyZ4gpCaMLW3VsX';
 const APP_URL = process.env.APP_URL || `http://localhost:${PORT}`;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://admin:vpsThishanth%231G@198.23.149.30:27017/?directConnection=true&authSource=admin&appName=mongosh%202.2.10';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://admin:vpsThishanth%231G@198.23.149.30:27016/?directConnection=true&authSource=admin&appName=mongosh%202.2.10';
 
 app.use(bodyParser.json());
 app.use(cors()); // Enable CORS for all routes
