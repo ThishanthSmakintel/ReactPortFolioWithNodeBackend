@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const cors = require('cors'); // Add cors package
+const cors = require('cors');
 require('dotenv').config();
 const path = require('path');
 
@@ -9,12 +9,15 @@ const app = express();
 const PORT = process.env.PORT || 2000;
 const API_TOKEN = process.env.API_TOKEN || 'bORYDyZ4gpCaMLW3VsX';
 const APP_URL = process.env.APP_URL || `http://localhost:${PORT}`;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://admin:vpsThishanth%231G@198.23.149.30:27016/?directConnection=true&authSource=admin&appName=mongosh%202.2.10';
+const MONGODB_URI = 'mongodb://admin:vpsThishanth%231G@198.23.149.34:27016/?directConnection=true&authSource=admin&appName=mongosh+2.2.12';
 
 app.use(bodyParser.json());
-app.use(cors()); // Enable CORS for all routes
+app.use(cors());
 
-mongoose.connect(MONGODB_URI)
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
 .then(() => {
   console.log('MongoDB connected');
 })
